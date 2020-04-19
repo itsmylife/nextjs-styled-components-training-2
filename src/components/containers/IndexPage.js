@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Card from '../cards/Card';
 import Motto from '../Motto';
-import {VerticalBox} from '../Box';
+import {Box} from '../Box';
 import {IconCalculator, IconKarma, IconSupervisor, IconTeamBuilder} from '../icons';
 
 const CardContainer = styled.div`
@@ -12,11 +12,25 @@ const CardContainer = styled.div`
   & > * {
     margin: 0 15px
   }
+   
+  @media only screen and (max-width: 1100px) {
+    flex-direction: column;
+  }
 `;
 
 const VerticalCardContainer = styled.div`
   & > * {
     margin: 30px 0
+  }
+`;
+
+const VerticalBox = styled(Box)`
+  flex-direction: column;
+  flex-wrap: wrap;
+  
+  @media only screen and (min-width: 1100px) {
+    width: 1440px;
+    margin: 0 auto;
   }
 `;
 
