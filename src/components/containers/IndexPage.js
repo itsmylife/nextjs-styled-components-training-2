@@ -2,53 +2,57 @@ import React from 'react';
 import styled from 'styled-components';
 import Card from '../cards/Card';
 import Motto from '../Motto';
-import {Box, VerticalBox} from '../Box';
+import {VerticalBox} from '../Box';
 import {IconCalculator, IconKarma, IconSupervisor, IconTeamBuilder} from '../icons';
 
 const CardContainer = styled.div`
   display: flex;
+  justify-content: space-between;
   align-items: center;
+  & > * {
+    margin: 0 15px
+  }
 `;
 
-const CustomVerticalBox = styled(VerticalBox)`
-  width: 960px
+const VerticalCardContainer = styled.div`
+  & > * {
+    margin: 30px 0
+  }
 `;
 
 const IndexPage = () => {
 
   return (
-    <Box>
-      <CustomVerticalBox>
-        <Motto />
-        <CardContainer>
+    <VerticalBox>
+      <Motto />
+      <CardContainer>
+        <Card
+          borderColor={'Cyan'}
+          title="Supervisor"
+          subtitle="Monitors activity to identify project roadblocks"
+          icon={<IconSupervisor />}
+        />
+        <VerticalCardContainer>
           <Card
-            color={'green'}
-            title="Supervisor"
-            subtitle="Monitors activity to identify project roadblocks"
-            icon={<IconSupervisor />}
+            borderColor={'Red'}
+            title="Team Builder"
+            subtitle="Scans our talent network to create the optimal team for your project"
+            icon={<IconTeamBuilder />}
           />
-          <div>
-            <Card
-              color={'red'}
-              title="Team Builder"
-              subtitle="Scans our talent network to create the optimal team for your project"
-              icon={<IconTeamBuilder />}
-            />
-            <Card
-              color={'yellow'}
-              title="Karma"
-              subtitle="Regularly evaluates our talent to ensure quality"
-              icon={<IconKarma />}
-            />
-          </div>
           <Card
-            color={'blue'}
-            title="Calculator"
-            subtitle="Uses data from past projects to provide better delivery estimates"
-            icon={<IconCalculator />} />
-        </CardContainer>
-      </CustomVerticalBox>
-    </Box>
+            borderColor={'Orange'}
+            title="Karma"
+            subtitle="Regularly evaluates our talent to ensure quality"
+            icon={<IconKarma />}
+          />
+        </VerticalCardContainer>
+        <Card
+          borderColor={'Blue'}
+          title="Calculator"
+          subtitle="Uses data from past projects to provide better delivery estimates"
+          icon={<IconCalculator />} />
+      </CardContainer>
+    </VerticalBox>
   );
 };
 

@@ -4,8 +4,6 @@ import {ThemeProvider} from 'styled-components';
 
 import './style.css';
 import 'sanitize.css';
-import 'sanitize.css/typography.css';
-import 'sanitize.css/forms.css';
 
 const theme = {
   colors: {
